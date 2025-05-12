@@ -1,0 +1,754 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+/* Main Container */
+.resume-generator {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+/* Main layout */
+.main-container {
+  display: flex;
+  gap: 20px;
+  min-height: 800px;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+
+/* Settings Panel */
+.settings-panel {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 500px;
+  overflow-y: auto;
+}
+
+.theme-selector,
+.photo-upload,
+.section-editor,
+.download-section {
+  margin-bottom: 25px;
+}
+
+.theme-selector h2,
+.photo-upload h2,
+.section-editor h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* Theme selector */
+.theme-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.theme-options button {
+  flex: 1;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-options button:hover {
+  background-color: #e9ecef;
+}
+
+.theme-options button.active {
+  background-color: #4299e1;
+  color: white;
+  border-color: #4299e1;
+}
+
+/* Photo upload */
+.photo-upload input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Section tabs */
+.section-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.section-tabs button {
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.section-tabs button:hover {
+  background-color: #e9ecef;
+}
+
+.section-tabs button.active {
+  background-color: #4299e1;
+  color: white;
+  border-color: #4299e1;
+}
+
+/* Editor container */
+.editor-container {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Item editors */
+.item-editor {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-header h3 {
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.remove-btn {
+  background-color: #f56565;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.remove-btn.small {
+  font-size: 10px;
+  padding: 2px 6px;
+}
+
+.add-btn {
+  background-color: #48bb78;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.add-btn.small {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+/* Project section */
+.projects-section {
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.projects-section h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.project-editor {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Download button */
+.download-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #3182ce;
+}
+
+/* Preview Panel */
+.preview-panel {
+  flex: 1.5;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 20px;
+}
+
+.preview-header h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.preview-container {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* ----- DEFAULT THEME STYLES ----- */
+.resume-default .resume-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.resume-default .resume-layout {
+  display: flex;
+  gap: 30px;
+}
+
+.resume-default .left-column {
+  flex: 1;
+}
+
+.resume-default .right-column {
+  flex: 2;
+}
+
+.resume-default .photo-container {
+  margin-bottom: 20px;
+}
+
+.resume-default .profile-photo {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 4px;
+  display: block;
+}
+
+.resume-default .section {
+  margin-bottom: 25px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.resume-default .section-title {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.resume-default .detail-item {
+  margin-bottom: 8px;
+}
+
+.resume-default .detail-label {
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.resume-default .skill-group {
+  margin-bottom: 15px;
+}
+
+.resume-default .skill-category {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.resume-default .skill-list {
+  padding-left: 20px;
+}
+
+.resume-default .skill-item {
+  margin-bottom: 4px;
+}
+
+.resume-default .education-item,
+.resume-default .certificate-item,
+.resume-default .experience-item,
+.resume-default .achievement-item {
+  margin-bottom: 15px;
+}
+
+.resume-default .institution,
+.resume-default .cert-institution,
+.resume-default .company,
+.resume-default .achievement-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.resume-default .degree,
+.resume-default .cert-name,
+.resume-default .position,
+.resume-default .location,
+.resume-default .industry {
+  margin-bottom: 4px;
+}
+
+.resume-default .date,
+.resume-default .cert-date {
+  text-align: right;
+  font-style: italic;
+  color: #666;
+}
+
+.resume-default .exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.resume-default .duration {
+  font-style: italic;
+  color: #666;
+}
+
+.resume-default .projects-container {
+  margin-top: 10px;
+}
+
+.resume-default .projects-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.resume-default .project-item {
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.resume-default .project-name {
+  margin-bottom: 5px;
+}
+
+.resume-default .project-tasks {
+  padding-left: 20px;
+}
+
+/* ----- MODERN THEME STYLES ----- */
+.resume-modern .resume-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resume-modern .resume-layout {
+  display: flex;
+}
+
+.resume-modern .sidebar {
+  width: 30%;
+  background-color: #2c3e50;
+  color: white;
+  padding: 30px 20px;
+}
+
+.resume-modern .main-content {
+  width: 70%;
+  padding: 30px;
+}
+
+.resume-modern .profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.resume-modern .photo-container {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.resume-modern .profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+}
+
+.resume-modern .profile-name {
+  font-size: 22px;
+  margin: 10px 0 5px;
+}
+
+.resume-modern .profile-location {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.resume-modern .sidebar-heading {
+  font-size: 16px;
+  margin: 25px 0 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resume-modern .contact-item {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.resume-modern .skill-group {
+  margin-bottom: 15px;
+}
+
+.resume-modern .skill-category {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.resume-modern .skill-list {
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.resume-modern .skill-item {
+  margin-bottom: 4px;
+}
+
+.resume-modern .section {
+  margin-bottom: 25px;
+}
+
+.resume-modern .content-heading {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #3498db;
+  text-transform: uppercase;
+}
+
+.resume-modern .education-item,
+.resume-modern .certificate-item,
+.resume-modern .experience-item,
+.resume-modern .achievement-item {
+  margin-bottom: 20px;
+}
+
+.resume-modern .edu-institution,
+.resume-modern .cert-name,
+.resume-modern .company-name,
+.resume-modern .achievement-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.resume-modern .edu-degree,
+.resume-modern .cert-institution,
+.resume-modern .exp-position {
+  color: #555;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.resume-modern .edu-date,
+.resume-modern .cert-date,
+.resume-modern .exp-duration {
+  font-size: 13px;
+  color: #888;
+}
+
+.resume-modern .exp-location {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.resume-modern .exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.resume-modern .projects-container {
+  margin-top: 10px;
+}
+
+.resume-modern .project-item {
+  margin-bottom: 12px;
+}
+
+.resume-modern .project-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.resume-modern .project-period {
+  font-weight: normal;
+  font-size: 13px;
+  color: #888;
+}
+
+.resume-modern .project-tasks {
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.resume-modern .task-item {
+  margin-bottom: 3px;
+}
+
+/* ----- MINIMAL THEME STYLES ----- */
+.resume-minimal .resume-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.resume-minimal .resume-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.resume-minimal .resume-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.resume-minimal .contact-info {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.resume-minimal .separator {
+  margin: 0 8px;
+  color: #ccc;
+}
+
+.resume-minimal .photo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.resume-minimal .profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+.resume-minimal .resume-content {
+  display: flex;
+  gap: 40px;
+}
+
+.resume-minimal .column {
+  flex: 1;
+}
+
+.resume-minimal .section {
+  margin-bottom: 30px;
+}
+
+.resume-minimal .section-heading {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resume-minimal .content-item {
+  margin-bottom: 20px;
+}
+
+.resume-minimal .item-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.resume-minimal .item-detail {
+  margin-bottom: 3px;
+}
+
+.resume-minimal .item-meta,
+.resume-minimal .exp-meta {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.resume-minimal .exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.resume-minimal .exp-position {
+  font-style: italic;
+  margin-bottom: 3px;
+}
+
+.resume-minimal .projects-summary {
+  margin-top: 8px;
+}
+
+.resume-minimal .project-list {
+  padding-left: 18px;
+}
+
+.resume-minimal .project-item {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.resume-minimal .skills-list {
+  color: #666;
+  font-size: 14px;
+}
+
+.resume-minimal .cert-line {
+  margin-bottom: 8px;
+}
+
+.resume-minimal .achievement-title {
+  margin-bottom: 5px;
+}
+
+.resume-minimal .achievement-description {
+  font-size: 14px;
+  color: #666;
+}
