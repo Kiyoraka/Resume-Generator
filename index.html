@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Generator</title>
+  <!-- Include Vue.js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- Include CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div id="app">
+    <resume-generator></resume-generator>
+  </div>
+
+  <!-- Main app component -->
+  <script src="app.js"></script>
+  
+  <!-- Theme files -->
+  <script src="assets/js/themes/default.js"></script>
+  <script src="assets/js/themes/modern.js"></script>
+  <script src="assets/js/themes/minimal.js"></script>
+  
+  <!-- Utility files -->
+  <script src="assets/js/photohandler.js"></script>
+  
+  <!-- Mount the app -->
+  <script>
+    const { createApp } = Vue;
+    
+    const app = createApp({
+      components: {
+        'resume-generator': ResumeGenerator
+      }
+    });
+    
+    app.mount('#app');
+  </script>
+</body>
+</html>
